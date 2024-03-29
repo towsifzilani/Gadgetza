@@ -1,0 +1,31 @@
+Options -MultiViews
+RewriteEngine On
+
+RewriteRule ^index index.php [L]
+RewriteRule ^error error.php [L]
+RewriteRule ^offline offline.php [L]
+RewriteRule ^signin signin.php [L]
+RewriteRule ^signup signup.php [L]
+RewriteRule ^signout signout.php [L]
+RewriteRule ^forgot forgot.php [L]
+RewriteRule ^profile profile.php [L]
+RewriteRule ^reset reset.php [L]
+RewriteRule ^activate activate.php [L]
+RewriteRule ^verify verify.php [L]
+RewriteRule ^private private.php [L]
+RewriteRule sitemap.xml sitemap.php
+
+RewriteRule ^deal/([a-zA-Z0-9_-]+) single-deal.php?id=$1&slug=$2&%{QUERY_STRING} [L]
+RewriteRule ^location/([a-zA-Z0-9_-]+) single-location.php?slug=$1&%{QUERY_STRING} [L]
+RewriteRule ^user/([a-zA-Z0-9_-]+) single-user.php?slug=$1&%{QUERY_STRING} [L]
+RewriteRule ^pay/([a-zA-Z0-9_-]+) pay.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^success/([a-zA-Z0-9_-]+) success.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^cancel/([a-zA-Z0-9_-]+) cancel.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^redirect/([^/]+) redirect.php?id=$1&%{QUERY_STRING} [L]
+
+# If the request is not for a valid directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# If the request is not for a valid file
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^([^/]+)/?$ single-page.php?slug=$1&%{QUERY_STRING} [L,QSA]

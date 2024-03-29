@@ -1,0 +1,12 @@
+{
+    "require": {
+        "razorpay/razorpay": "2.*",
+        "stripe/stripe-php": "^9.3",
+        "mashape/unirest-php": "^3.0",
+        "voku/anti-xss": "^4.1",
+        "phpmailer/phpmailer": "^6.6",
+        "mollie/mollie-api-php": "^2.0",
+        "whichbrowser/parser": "^2.1",
+        "mailjet/mailjet-apiv3-php": "^1.5"
+    }
+}
